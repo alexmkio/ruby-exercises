@@ -52,14 +52,12 @@ RSpec.describe Student do
     expect(student.grade).to eq('B')
   end
 
-  xit 'however, so is studying' do
+  it 'however, so is studying' do
     student = Student.new
 
     100.times { student.slack_off }
     student.study
 
-    expect(student.grade).to eq('B')
-
+    expect(student.grade).to eq('D')
   end
 end
-
