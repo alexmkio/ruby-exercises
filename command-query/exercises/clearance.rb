@@ -8,10 +8,8 @@ class Clearance
   end
 
   def best_deal
-    if @items.length > 0
-      @items.max_by {|item| item.discount / item.price}.name
-    else
-      nil
-    end
+    return unless @items.length.positive?
+
+    @items.max_by { |item| item.discount.to_f / item.price }.name
   end
 end
