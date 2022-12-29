@@ -20,16 +20,12 @@ class Student
   end
 
   def study
-    if @effort < 2
-      @effort += 1
-    end
+    @effort += 1 if @effort < 2
     calculate_grade
   end
 
   def slack_off
-    if @effort > -2
-      @effort -= 1
-    end
+    @effort -= 1 if @effort > -2
     calculate_grade
   end
 end
